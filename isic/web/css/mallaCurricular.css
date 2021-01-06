@@ -1,0 +1,18 @@
+*{ 
+  font-family: Arial, Helvetica, sans-serif;
+}
+h4{
+    padding-top: 5%;
+}
+.fas{
+    font-size: 80%;
+}
+i{
+    padding-left: 80%;
+}
+#tabla1, #tabla2, #tabla3{
+    font-size: 80%;
+}
+#lista1{
+    font-size: 70%;
+}
