@@ -23,7 +23,7 @@
         <div class="container">
             <center>
                 <p><b><h5>Intituto Tecnológico Superior del Occidente del Estado de Hidalgo</h5></b></p>
-                <p><h6>RETICULA DE INGENIERÍA EN SISTEMAS COMPUTACIONALES CLAVE ISIC-2010-224, Especilidad: ${mat[0].Nombre}, Clave: CDDT</h6></p> 
+                <p><h6>RETICULA DE INGENIERÍA EN SISTEMAS COMPUTACIONALES CLAVE ISIC-2010-224, Especilidad: ${mat[0].Nombre}</h6></p> 
             </center>
             <table class="table table-borderless">
                 <thead>

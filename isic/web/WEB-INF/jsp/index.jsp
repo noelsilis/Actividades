@@ -20,6 +20,7 @@
     </head>
 
     <body>
+    <header>
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <ul class="navbar-nav">
                 <li class="nav-item active">
@@ -30,8 +31,9 @@
                         Malla Curricular
                     </a>
                     <div class="dropdown-menu">
-                        <a class="nav-link dropdown-item" target="contenedorIFrame" href="mallaCurricular.htm">Ciencia de los Datos</a>
-                        <a class="nav-link dropdown-item" target="contenedorIFrame" href="mallaCurricular2.htm">Desarrollo de Aplicaciones Móviles</a>
+                        <c:forEach var="list" items="${listEsp}">
+                            <a class="nav-link dropdown-item" target="contenedorIFrame" href="mallaCurricular.htm?sp=${list.idespecialidad}">${list.Nombre}</a>
+                        </c:forEach>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -43,8 +45,9 @@
                             Especialidades
                         </a>
                         <div class="dropdown-menu">
-                            <a target="contenedorIFrame" class="nav-link dropdown-item" href="EspecialidadUno.htm">Ciencia de los Datos</a>
-                            <a class="nav-link dropdown-item" href="#">Desarrollo de Aplicaciones Móviles</a>
+                            <c:forEach var="list" items="${listEsp}">
+                                <a target="contenedorIFrame" class="nav-link dropdown-item" href="Especialidad.htm?sp=${list.idespecialidad}">${list.Nombre}</a>
+                            </c:forEach>
                         </div>
                     </div>
 
@@ -54,6 +57,7 @@
                 </li>
             </ul>
         </nav>
+    </header>
 
     <div class="content">
         <iframe name="contenedorIFrame" src="" id="contenido"></iframe>
