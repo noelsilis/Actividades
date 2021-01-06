@@ -12,7 +12,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <!--css local para tablas e icono-->
-        <link rel="stylesheet" type="text/css" href="css/especialidad.css">
+        <link rel="stylesheet" type="text/css" href="css/especialidad.css?1.0.0" />
         <!--iconos de la plataforma fontawesome-->
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <title>Especialidad</title>
@@ -24,7 +24,7 @@
             <p><c:out value="${espInfo[0].Objetivo}"/></p>
             <a href="#sec2">Section 2</a>
         </div>
-        <img src="img/Freelancer.svg">
+        <img src="img/Freelancer.svg?1.0.0">
     </section>
     <section id="sec2">
         <div class="contenedor-texto">
@@ -36,7 +36,7 @@
             </ol>
             <a href="#sec3">Section 3</a>
         </div>
-        <img src="img/online_cv.svg">
+        <img src="img/online_cv.svg?1.0.0">
     </section>
     <section id="sec3">
         <div class="contenedor-texto">
@@ -59,7 +59,7 @@
             </table>
             <a href="#sec1">Section 1</a>
         </div>
-        <img src="img/education.svg">
+        <img src="img/education.svg?1.0.0">
     </section>
 </body>
 </html>

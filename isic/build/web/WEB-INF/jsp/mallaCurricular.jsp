@@ -8,12 +8,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
               rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
-              crossorigin="anonymous">
+              crossorigin="anonymous" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <!--css local-->
-        <link rel="stylesheet" type="text/css" href="css/mallaCurricular.css">
+        <link rel="stylesheet" type="text/css" href="css/mallaCurricular.css?1.0.0" />
         <!--iconos de la plataforma fontawesome-->
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <title>Malla Curricular</title>
@@ -105,7 +105,7 @@
             </table>
         </div>
         <h1 id="tam" style="font-size:0px;"><c:out value = "${aux2}"/></h1>  
-        <script type="text/javascript" src="js/malla_curricular.js"></script>
+        <script type="text/javascript" src="js/malla_curricular.js?1.0.0"></script>
         <!-- Remember to include jQuery :) -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
         <!--Tabla descripción-->
