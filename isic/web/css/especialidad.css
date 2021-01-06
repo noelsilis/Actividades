@@ -47,8 +47,7 @@ section:nth-child(2){
     background-image: linear-gradient(to top, #00B4C3 0%, #007CC3 100%);
 }
 section:nth-child(3){
-    background-image: linear-gradient(to top, #007CC3 0%, #004AC3 100%);
-    /* background-image: linear-gradient(to top, #464646 0%, #00B4C3 100%); */
+    background-image: linear-gradient(to top, #004AC3 0%, #00B4C3 100%);
 }
 
 section a{

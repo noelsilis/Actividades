@@ -20,7 +20,6 @@
     </head>
 
     <body>
-    <header>
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <ul class="navbar-nav">
                 <li class="nav-item active">
@@ -55,7 +54,6 @@
                 </li>
             </ul>
         </nav>
-    </header>
 
     <div class="content">
         <iframe name="contenedorIFrame" src="" id="contenido"></iframe>
