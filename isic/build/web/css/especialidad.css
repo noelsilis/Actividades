@@ -7,20 +7,6 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-#malla{
-    margin-left: 10px;
-    display: inline-block;
-    padding: 7px 0;
-    color: #283773;
-    text-decoration: none;
-    width: 160px;
-    text-align: center;
-    border: 1px solid #fff;
-    border-radius: 50px;
-    background: #fff;
-}
-
 .contenedor-texto table{
     color: whitesmoke;
     font-size: 70%;
@@ -33,15 +19,21 @@ body{
 #sec2 .contenedor-texto{
     font-size: 90%;
 }
-
+#sec4{
+    height: 1100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: whitesmoke;
+}
 section{
     height: 650px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     color: whitesmoke;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 section h2{
@@ -55,13 +47,16 @@ section p{
     margin-bottom: 15px;
 }
 section:nth-child(1){
-    background-image: linear-gradient(to top, #007CC3 0%, #004AC3 100%);
+    background-image: linear-gradient(to top, #6398BB 0%, #004AC3 100%);
 }
 section:nth-child(2){
-    background-image: linear-gradient(to top, #00B4C3 0%, #007CC3 100%);
+    background-image: linear-gradient(to top, #0582AE 0%, #6398BB 100%);
 }
 section:nth-child(3){
-    background-image: linear-gradient(to top, #004AC3 0%, #00B4C3 100%);
+    background-image: linear-gradient(to top, #05AE9F 0%, #0582AE 100%);
+}
+section:nth-child(4){
+    background-image: linear-gradient(to top, #00256C 0%, #05AE9F 100%);
 }
 
 section a{

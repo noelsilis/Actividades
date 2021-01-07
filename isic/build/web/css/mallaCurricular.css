@@ -1,8 +1,8 @@
 *{ 
   font-family: Arial, Helvetica, sans-serif;
 }
-h4{
-    padding-top: 5%;
+#titulo{
+    padding-top: 10%;
 }
 .fas{
     font-size: 80%;
@@ -15,4 +15,12 @@ i{
 }
 #lista1{
     font-size: 70%;
+}
+.tabla tbody td{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#detalles{
+    padding-top: 10px;
 }

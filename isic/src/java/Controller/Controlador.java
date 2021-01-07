@@ -74,6 +74,17 @@ public class Controlador {
         sql = "call isic.sp_egreso(" + esp + ")";
         datos = this.jdbcTemplate.queryForList(sql);
         mav.addObject("espEgr", datos);
+        
+        for (int i = 1; i < 10; i++) {
+            sql = "call isic.sp_malla(" + i + ", " + esp + ")";
+            datos = this.jdbcTemplate.queryForList(sql);
+            String aux = "as" + i;
+            mav.addObject(aux, datos);
+        }
+        sql = "call isic.sp_area()";
+        datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("area", datos);
+        
         mav.setViewName("Especialidad");
         return mav;
     }
