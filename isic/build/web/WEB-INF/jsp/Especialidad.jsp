@@ -58,6 +58,7 @@
                 </thead>   
             </table>
             <a href="#sec1">Section 1</a>
+            <a id="malla" target="_blank" href="mallaCurricular.htm?sp=${list.idespecialidad}">Malla Curricular</a>
         </div>
         <img src="img/education.svg?1.0.0">
     </section>
