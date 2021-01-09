@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -35,6 +36,9 @@ public class Controlador {
 
     @RequestMapping("adminMallaCurricular.htm")
     public ModelAndView adminMalla() {
+        sql = "call isic.sp_getMalla_Admin()";
+        List datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("asignatura", datos);
         mav.setViewName("adminMallaCurricular");
         return mav;
     }
@@ -65,6 +69,16 @@ public class Controlador {
         List datos = this.jdbcTemplate.queryForList(sql);
         mav.addObject("inv", datos);
         mav.setViewName("Investigacion");
+        return mav;
+    }
+    
+    @RequestMapping(value = "editarMalla.htm", method = RequestMethod.GET)
+    public ModelAndView editarMalla(HttpServletRequest request) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        sql = "call isic.sp_getAsignatura("+id+")";
+        List datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("asig", datos);
+        mav.setViewName("editarMalla");
         return mav;
     }
 

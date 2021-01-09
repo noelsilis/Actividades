@@ -5,11 +5,11 @@
 
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!--css local-->
         <link rel="stylesheet" type="text/css" href="css/index.css?1.0.0" />
         <title>Index</title>
@@ -20,29 +20,19 @@
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                    <a id="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        Malla Curricular
-                    </a>
-                    <div class="dropdown-menu">
-                        <c:forEach var="list" items="${listEsp}">
-                            <a class="nav-link dropdown-item" target="contenedorIFrame" href="mallaCurricular.htm?sp=${list.idespecialidad}">${list.Nombre}</a>
-                        </c:forEach>
-                    </div>
+                    <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" target="contenedorIFrame" href="Investigacion.htm">Investigacion</a>
                 </li>
                 <li class="nav-item">
-                    <div class="dropdown">
-                        <a id="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                    <div class="dropdown-local">
+                        <a class="nav-link">
                             Especialidades
                         </a>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-content">
                             <c:forEach var="list" items="${listEsp}">
-                                <a target="contenedorIFrame" class="nav-link dropdown-item" href="Especialidad.htm?sp=${list.idespecialidad}">${list.Nombre}</a>
+                                <a target="contenedorIFrame" href="Especialidad.htm?sp=${list.idespecialidad}">${list.Nombre}</a>
                             </c:forEach>
                         </div>
                     </div>
@@ -56,7 +46,6 @@
     <div class="content">
         <iframe name="contenedorIFrame" src="" id="contenido"></iframe>
     </div>
-    <div class="container">
 
-    </body>
+</body>
 </html>

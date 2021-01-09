@@ -20,7 +20,6 @@
         <property name="mappings">
             <props>
                 <prop key="index.htm">controlador</prop>
-                <prop key="mallaCurricular.htm">controlador</prop>
                 <prop key="Investigacion.htm">controlador</prop>
                 <prop key="Especialidad.htm">controlador</prop>
                 <prop key="adminMallaCurricular.htm">controlador</prop>
