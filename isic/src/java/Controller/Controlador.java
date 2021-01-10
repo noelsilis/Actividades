@@ -72,13 +72,12 @@ public class Controlador {
         return mav;
     }
     
-    @RequestMapping(value = "editarMalla.htm", method = RequestMethod.GET)
-    public ModelAndView editarMalla(HttpServletRequest request) {
-        int id = Integer.parseInt(request.getParameter("id"));
-        sql = "call isic.sp_getAsignatura("+id+")";
+    @RequestMapping("adminInvestigacion.htm")
+    public ModelAndView areaAdminInvestigacion() {
+        sql = "call isic.sp_lineaInvs()";
         List datos = this.jdbcTemplate.queryForList(sql);
-        mav.addObject("asig", datos);
-        mav.setViewName("editarMalla");
+        mav.addObject("inv", datos);
+        mav.setViewName("adminInvestigacion");
         return mav;
     }
 
@@ -106,6 +105,11 @@ public class Controlador {
         mav.addObject("area", datos);
 
         mav.setViewName("Especialidad");
+        return mav;
+    }
+    @RequestMapping("adminEspecialidad.htm")
+    public ModelAndView adminEspecialidad(HttpServletRequest request) {
+        mav.setViewName("adminEspecialidad");
         return mav;
     }
 }

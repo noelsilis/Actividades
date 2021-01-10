@@ -10,13 +10,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <!--CSS local-->
-        <link rel="stylesheet" type="text/css" href="css/adminMallaCurricular.css?1.0.0" />
+        <link rel="stylesheet" type="text/css" href="css/adminEditor.css?1.0.0" />
         <title>Admin</title>
     </head>
     <body>
         <div class="container">
             <h2>Malla Curricular</h2>
-            <table class="table table-dark table-hover">
+            <table class="table table-light table-hover">
                 <thead>
                     <tr>
                         <th>Semestre</th>
@@ -34,7 +34,7 @@
                             <td>${lista.MC_ClaveAsignatura}</td>
                             <td>${lista.MC_NombreAsignatura}</td>
                             <td>${lista.MC_HorasTot}</td>
-                            <td class="btn-group btn-group-sm"> 
+                            <td> 
                                 <div class="btn-group btn-group-sm">
                                     <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">Editar</button>
                                     <button type="button" class="btn btn-secondary">Borrar</button>

@@ -23,6 +23,8 @@
                 <prop key="Investigacion.htm">controlador</prop>
                 <prop key="Especialidad.htm">controlador</prop>
                 <prop key="adminMallaCurricular.htm">controlador</prop>
+                <prop key="adminInvestigacion.htm">controlador</prop>
+                <prop key="adminEspecialidad.htm">controlador</prop>
             </props>
         </property>
     </bean>
