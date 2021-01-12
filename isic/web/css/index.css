@@ -9,24 +9,14 @@ body{
 }
 
 .dropdown-local {
-    position: relative;
     display: inline-block;
 }
 
-.dropdown-content-hg { 
-    background-color: #f9f9f9;
-    min-width: 300px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+.dropdown-content { 
     display: none;
     position: absolute;
-    z-index: 1;
-}
-.dropdown-content-sm { 
     background-color: #f9f9f9;
-    min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    display: none;
-    position: absolute;
     z-index: 1;
 }
 
@@ -35,6 +25,7 @@ body{
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    text-align: left;
 }
 
 .dropdown-content a:hover {background-color: #f1f1f1}
