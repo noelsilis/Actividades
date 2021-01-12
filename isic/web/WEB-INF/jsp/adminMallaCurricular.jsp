@@ -16,7 +16,7 @@
     <body>
         <div class="container">
             <h2>Malla Curricular</h2>
-            <table class="table table-dark table-hover">
+            <table class="table table-light table-hover">
                 <thead>
                     <tr>
                         <th>Semestre</th>
@@ -34,7 +34,7 @@
                             <td>${lista.MC_ClaveAsignatura}</td>
                             <td>${lista.MC_NombreAsignatura}</td>
                             <td>${lista.MC_HorasTot}</td>
-                            <td class="btn-group btn-group-sm"> 
+                            <td> 
                                 <div class="btn-group btn-group-sm">
                                     <c:set var="tmp2" value="f"/>
                                     <c:forEach var="tmp" items="${listAsigEsp}">
