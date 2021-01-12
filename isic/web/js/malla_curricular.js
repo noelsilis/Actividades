@@ -10,7 +10,7 @@
         }
         /*Importante el orden de los arreglos (colores y estados) ya que estan creados paralelamente al color que se asigna*/
         colores = ["#921794", "#6C8B5A", "#A5A71F", "#B17205", "#8664C5", "#0366AF", "#78BDD4", "#0FA11A"];
-        estados = ["Ciencias Básicas", "Ciencias de la Ingenieria", "Ingeniería Aplicada", "Diseño en Ingenieria"
+        estados = ["Ciencias Basicas", "Ciencias de la Ingenieria", "Ingenieria Aplicada", "Diseño en Ingenieria"
                     , "Ciencias Sociales y Humanidades", "Cursos complementarios", "Ciencias economico administrativa"
                     , "Especialidad"];
         /*En los dos ciclos for que iteran a los estados y las etiquetas, comparando con un if
