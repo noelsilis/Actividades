@@ -16,7 +16,7 @@
     <body>
         <div class="container">
             <h2>Malla Curricular</h2>
-            <table class="table table-light table-hover">
+            <table class="table table-dark table-hover">
                 <thead>
                     <tr>
                         <th>Semestre</th>
@@ -34,10 +34,22 @@
                             <td>${lista.MC_ClaveAsignatura}</td>
                             <td>${lista.MC_NombreAsignatura}</td>
                             <td>${lista.MC_HorasTot}</td>
-                            <td> 
+                            <td class="btn-group btn-group-sm"> 
                                 <div class="btn-group btn-group-sm">
-                                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">Editar</button>
-                                    <button type="button" class="btn btn-secondary">Borrar</button>
+                                    <c:set var="tmp2" value="f"/>
+                                    <c:forEach var="tmp" items="${listAsigEsp}">
+                                        <c:if test="${tmp2 != 't'}">
+                                            <c:set var="tmp2" value="f"/>
+                                        </c:if>
+                                        <c:if test="${tmp.idasignatura == lista.MC_ClaveAsignatura}">
+                                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal" onclick="datosModal2('${lista.MC_SemestreAsignatura}', '${lista.Nombre}', '${lista.MC_ClaveAsignatura}', '${lista.MC_NombreAsignatura}', '${lista.MC_HorasTot}', '${tmp.idespecialidad}');">Editar</button>
+                                            <c:set var="tmp2" value="t"/>
+                                        </c:if>
+                                    </c:forEach>
+                                    <c:if test="${tmp2 == 'f'}">
+                                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal" onclick="datosModal('${lista.MC_SemestreAsignatura}', '${lista.Nombre}', '${lista.MC_ClaveAsignatura}', '${lista.MC_NombreAsignatura}', '${lista.MC_HorasTot}');">Editar</button>
+                                    </c:if>
+                                    <a type="button" class="btn btn-secondary" href="delete.htm?id=${lista.MC_ClaveAsignatura}">Borrar</a>
                                     <!-- The Modal -->
                                 </div>
                                 <div class="modal" id="myModal">
@@ -52,10 +64,10 @@
 
                                             <!-- Modal body -->
                                             <div class="modal-body">
-                                                <form action="/action_page.php" class="needs-validation" novalidate>
-                                                    <div class="from-group">
-                                                        <label for="conocimiento" style="color:black;">Semestre:</label>
-                                                        <select id="semestre" name="semestres" class="custom-select mb-3 form-control" required>
+                                                <form class="needs-validation" novalidate method="POST">
+                                                    <div class="form-group">
+                                                        <label for="semestre" style="color:black;">Semestre:</label>
+                                                        <select id="semestre" name="semestre" class="custom-select mb-3 form-control" required>
                                                             <option selected>-Selecciona-</option>
                                                             <option value="1">1</option>
                                                             <option value="2">2</option>
@@ -72,16 +84,28 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="conocimiento" style="color:black;">Área de conocimiento:</label>
-                                                        <select id="conocimiento" name="conocimiento" class="custom-select mb-3 form-control" required>
+                                                        <select id="conocimiento" name="conocimiento" class="custom-select mb-3 form-control" onchange="showSelected();" required>
                                                             <option selected>-Selecciona-</option>
                                                             <option value="Ciencias de la Ingenieria">Ciencias de la Ingenieria</option>
                                                             <option value="Ciencias Sociales y Humanidades">Ciencias Sociales y Humanidades</option>
                                                             <option value="Ciencias economico administrativa">Ciencias economico administrativa</option>
-                                                            <option value="Ciencias Básicas">Ciencias Básicas</option>
+                                                            <option value="Ciencias Basicas">Ciencias Básicas</option>
                                                             <option value="Cursos complementarios">Cursos complementarios</option>
-                                                            <option value="Ingeniería Aplicada">Ingeniería Aplicada</option>
+                                                            <option value="Ingenieria Aplicada">Ingenieria Aplicada</option>
                                                             <option value="Diseño en Ingenieria">Diseño en Ingenieria</option>
                                                             <option value="Especialidad">Especialidad</option>
+                                                        </select>
+                                                        <div class="valid-feedback">Valido.</div>
+                                                        <div class="invalid-feedback">Por favor verifique los campos.</div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label id="especialidadtxt" for="conocimiento" style="color:black;display:none">Especialidad:</label>
+                                                        <select id="especialidad" name="especialidad" class="custom-select mb-3 form-control" style="display:none" required>
+                                                            <option selected>-Selecciona-</option>
+                                                            <option value="-1" style="display:none"></option>
+                                                            <c:forEach var="list" items="${listEsp}">
+                                                                <option value="${list.idespecialidad}">${list.Nombre}</option>
+                                                            </c:forEach>
                                                         </select>
                                                         <div class="valid-feedback">Valido.</div>
                                                         <div class="invalid-feedback">Por favor verifique los campos.</div>
@@ -104,7 +128,19 @@
                                                         <div class="valid-feedback">Valido.</div>
                                                         <div class="invalid-feedback">Por favor verifique los campos.</div>
                                                     </div>
-                                                    <button type="submit" class="btn btn-primary">Aceptar</button>
+
+                                                    <div class="form-group" style="display:none">
+                                                        <input type="text" class="form-control" id="claveOri"  name="claveOri" value="${lista.MC_ClaveAsignatura}">
+                                                    </div>
+
+                                                    <div class="form-group" style="display:none">
+                                                        <input type="text" class="form-control" id="op"  name="op" value="${-1}">
+                                                    </div>
+                                                    
+                                                    <div class="form-group" style="display:none">
+                                                        <input type="text" class="form-control" id="idespecialidadOri"  name="idespecialidadOri" value="${-1}">
+                                                    </div> 
+                                                   <button type="submit" class="btn btn-primary">Aceptar</button>
                                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                                                 </form>
                                             </div>
