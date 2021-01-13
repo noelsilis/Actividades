@@ -1,4 +1,5 @@
 // Disable form submissions if there are invalid fields
+aux = 0;
 (function () {
     'use strict';
     window.addEventListener('load', function () {
@@ -16,3 +17,59 @@
         });
     }, false);
 })();
+
+datosModal = function (Semestre, areaConocimiento, clave, asignatura, horas) {
+    $('#semestre').val(Semestre);
+    $('#conocimiento').val(areaConocimiento);
+    $('#clave').val(clave);
+    $('#claveOri').val(clave);
+    $('#nombre').val(asignatura);
+    $('#horas').val(horas);
+    $('#especialidad').val(1);
+    if (areaConocimiento === "Especialidad") {
+        document.getElementById('especialidadtxt').style.display = 'block';
+        document.getElementById('especialidad').style.display = 'block';
+        $('#op').val(0);
+    } else {
+        document.getElementById('especialidadtxt').style.display = 'none';
+        document.getElementById('especialidad').style.display = 'none';
+    }
+};
+
+datosModal2 = function (Semestre, areaConocimiento, clave, asignatura, horas, Especialidad) {
+    $('#semestre').val(Semestre);
+    $('#conocimiento').val(areaConocimiento);
+    $('#clave').val(clave);
+    $('#claveOri').val(clave);
+    $('#nombre').val(asignatura);
+    $('#horas').val(horas);
+    $('#especialidad').val(Especialidad);
+    $('#idespecialidadOri').val(Especialidad);
+    if (areaConocimiento === "Especialidad") {
+        $('#op').val(1);
+        aux = 1;
+        document.getElementById('especialidadtxt').style.display = 'block';
+        document.getElementById('especialidad').style.display = 'block';
+    } else {
+        document.getElementById('especialidadtxt').style.display = 'none';
+        document.getElementById('especialidad').style.display = 'none';
+    }
+};
+
+showSelected = function ()
+{
+    var cod = document.getElementById("conocimiento").value;
+    if (cod === "Especialidad") {
+        if (aux === 1) {
+            $('#op').val(1);
+        }else{
+            $('#op').val(0);
+        }
+        document.getElementById('especialidadtxt').style.display = 'block';
+        document.getElementById('especialidad').style.display = 'block';
+    } else {
+        $('#op').val(-1);
+        document.getElementById('especialidadtxt').style.display = 'none';
+        document.getElementById('especialidad').style.display = 'none';
+    }
+};

@@ -7,6 +7,8 @@ package Controller;
 
 import Config.Conexion;
 import Modelo.Asignatura;
+import Modelo.Especialidad;
+import Modelo.Investigacion;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -37,7 +39,7 @@ public class Controlador {
 
     @RequestMapping("adminMallaCurricular.htm")
     public ModelAndView adminMalla() {
-         sql = "call isic.sp_especialidad_lista()";
+        sql = "call isic.sp_especialidad_lista()";
         List datos = this.jdbcTemplate.queryForList(sql);
         mav.addObject("listEsp", datos);
         sql = "call isic.sp_getMalla_Admin()";
@@ -49,14 +51,11 @@ public class Controlador {
         mav.setViewName("adminMallaCurricular");
         return mav;
     }
-    
+
     @RequestMapping(value = "adminMallaCurricular.htm", method = RequestMethod.POST)
     public ModelAndView adminMalla(Asignatura asi) {
-//        sql = "call isic.sp_editarAsig('" + asi.getClave() + "','" + asi.getNombre() + "'," + asi.getSemestre()
-//                + ",'" + asi.getHoras() + "','" + asi.getConocimiento() + "','" + asi.getClaveOri()
-//                + "','" + asi.getIdespecialidadOri() + "'," + asi.getEspecialidad() + "," + asi.getOp() + ")";
         sql = "call isic.sp_editarAsig(?,?,?,?,?,?,?,?,?)";
-        this.jdbcTemplate.update(sql,asi.getClave(), asi.getNombre(), asi.getSemestre(), asi.getHoras(), 
+        this.jdbcTemplate.update(sql, asi.getClave(), asi.getNombre(), asi.getSemestre(), asi.getHoras(),
                 asi.getConocimiento(), asi.getClaveOri(), asi.getIdespecialidadOri(), asi.getEspecialidad(), asi.getOp());
         return new ModelAndView("redirect:/adminMallaCurricular.htm");
     }
@@ -76,6 +75,14 @@ public class Controlador {
         return mav;
     }
 
+    @RequestMapping("delete.htm")
+    public ModelAndView Delete(HttpServletRequest request) {
+        String id = request.getParameter("id");
+        sql = "call isic.sp_borraMalla('" + id + "')";
+        this.jdbcTemplate.update(sql);
+        return new ModelAndView("redirect:/adminMallaCurricular.htm");
+    }
+
     @RequestMapping("Investigacion.htm")
     public ModelAndView areaInvestigacion() {
         sql = "call isic.sp_lineaInvs()";
@@ -84,14 +91,53 @@ public class Controlador {
         mav.setViewName("Investigacion");
         return mav;
     }
-    
+
     @RequestMapping("adminInvestigacion.htm")
     public ModelAndView areaAdminInvestigacion() {
-        sql = "call isic.sp_lineaInvs()";
+        sql = "call isic.sp_getTemaInv()";
         List datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("tema", datos);
+        sql = "call isic.sp_lineaInvs()";
+        datos = this.jdbcTemplate.queryForList(sql);
         mav.addObject("inv", datos);
+        sql = "call isic.sp_getDocente()";
+        datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("doce", datos);
         mav.setViewName("adminInvestigacion");
         return mav;
+    }
+    
+    @RequestMapping(value = "adminInvestigacion.htm", method = RequestMethod.POST)
+    public ModelAndView areaAdminInvestigacion(Investigacion inv) {
+        switch (inv.getOp()) {
+            case 1:
+                sql = "call isic.sp_editTemaIvs(?,?)";
+                this.jdbcTemplate.update(sql, inv.getIdtemaInv(), inv.getTemaInv());
+                break;
+            case 2:
+                sql = "call isic.sp_editarLineaInv(?,?,?,?,?)";
+                this.jdbcTemplate.update(sql, inv.getTemaOri(), inv.getDocenteOri(), inv.getTema(), inv.getDocente(), inv.getCargo());
+                break;
+            default:
+                break;
+        }
+        return new ModelAndView("redirect:/adminInvestigacion.htm");
+    }
+    
+    @RequestMapping("deleteTemaInv.htm")
+    public ModelAndView DeleteTemaInv(HttpServletRequest request) {
+        String id = request.getParameter("id");
+        sql = "call isic.sp_borrarTemaInv(?)";
+        this.jdbcTemplate.update(sql, id);
+        return new ModelAndView("redirect:/adminInvestigacion.htm");
+    }
+    
+    @RequestMapping("desHabDocentInv.htm")
+    public ModelAndView DesHabDocentInv(HttpServletRequest request) {
+        String [] tmp = request.getParameter("id").split("_");
+        sql = "call isic.sp_DesHabLineaInvDoc(?,?,?)";
+        this.jdbcTemplate.update(sql, tmp[0], tmp[1], tmp[2]);
+        return new ModelAndView("redirect:/adminInvestigacion.htm");
     }
 
     @RequestMapping("Especialidad.htm")
@@ -113,17 +159,65 @@ public class Controlador {
         mav.setViewName("Especialidad");
         return mav;
     }
+
     @RequestMapping("adminEspecialidad.htm")
     public ModelAndView adminEspecialidad(HttpServletRequest request) {
+        sql = "call sp_getEspecialidadAdmin()";
+        List datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("especialidad", datos);
+        sql = "call isic.sp_getEgresoAdmin()";
+        datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("egreso", datos);
+        sql = "call isic.sp_getAsignaturaEspAdmin()";
+        datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("asiEsp", datos);
         mav.setViewName("adminEspecialidad");
         return mav;
     }
-      @RequestMapping("delete.htm")
-    public ModelAndView Delete(HttpServletRequest request) {
+
+    @RequestMapping(value = "adminEspecialidad.htm", method = RequestMethod.POST)
+    public ModelAndView adminEspecialidad(Especialidad esp) {
+        switch (esp.getOp()) {
+            case 1:
+                sql = "call isic.sp_editarEsp(?,?,?)";
+                this.jdbcTemplate.update(sql, esp.getIdespecialidad(), esp.getNombre(), esp.getObjetivo());
+                break;
+            case 2:
+                sql = "call isic.sp_editPEgreso(?,?,?)";
+                this.jdbcTemplate.update(sql, esp.getIdegreso(), esp.getPerfilOri(), esp.getPerfil());
+                break;
+            case 3:
+                sql = "call isic.sp_editAsigEsp(?,?,?)";
+                this.jdbcTemplate.update(sql, esp.getIdEsp(), esp.getClave(), esp.getDescripcion());
+                break;
+            default:
+                break;
+        }
+        return new ModelAndView("redirect:/adminEspecialidad.htm");
+    }
+
+    @RequestMapping("deleteEspecialidad.htm")
+    public ModelAndView DeleteEspecialidad(HttpServletRequest request) {
         String id = request.getParameter("id");
-        sql = "call isic.sp_borraMalla('" + id + "')";
-        this.jdbcTemplate.update(sql);
-        return new ModelAndView("redirect:/adminMallaCurricular.htm");
+        sql = "call isic.sp_borrarEsp(?)";
+        this.jdbcTemplate.update(sql, id);
+        return new ModelAndView("redirect:/adminEspecialidad.htm");
+    }
+
+    @RequestMapping("deletePEgreso.htm")
+    public ModelAndView DeletePEgreso(HttpServletRequest request) {
+        String[] tmp = request.getParameter("id").split("_");
+        sql = "call isic.sp_borrarPEgreso(?,?)";
+        this.jdbcTemplate.update(sql, tmp[0], tmp[1]);
+        return new ModelAndView("redirect:/adminEspecialidad.htm");
+    }
+    
+    @RequestMapping("deleteAsigEsp.htm")
+    public ModelAndView DeleteAsigEsp(HttpServletRequest request) {
+        String[] tmp = request.getParameter("id").split("_");
+        sql = "call isic.sp_borrarAsigEsp(?,?)";
+        this.jdbcTemplate.update(sql, tmp[0], tmp[1]);
+        return new ModelAndView("redirect:/adminEspecialidad.htm");
     }
 
     private void getMalla(int sp) {

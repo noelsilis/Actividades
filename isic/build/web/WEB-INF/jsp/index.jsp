@@ -4,7 +4,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" dir="ltr">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!--BootStrap-->
+        <!--BootStrap CSS-->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
         <!--Bootstrap JS-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -82,6 +82,7 @@
         <section id="footer" class="bg-dark">
             <div class="container">
                 <img src="img/isic-itsoeh-logo-blanco.png?1.0.0" alt="logo" class="logo-itsoeh">
+                
                 <ul class="list-inline">
                     <li class="list-inline-item footer-menu"><a href="#"><i class="fas fa-envelope"></i> rporras@itsoeh.edu.mx</a></li>
                     <li class="list-inline-item footer-menu"><a href="#"><i class="fas fa-phone-square-alt"></i> 01 738-73-54000 ext 240</a></li>
@@ -90,7 +91,10 @@
                             <i class="fab fa-facebook-square"></i> Facebook</a>
                     </li>
                 </ul>
-                <small>© 2021 Ingeniería en Sistemas Computacionales</small>
+                <ul class="list-inline">
+                    <li class="list-inline-item footer-menu"><span>Atención: M.C. Rolando Porras Muñoz</span></li>
+                </ul>
+                <small>© 2021 Ingeniería en Sistemas Computacionales | ITSOEH</small>
             </div>
         </section>
         <!--JS Local-->

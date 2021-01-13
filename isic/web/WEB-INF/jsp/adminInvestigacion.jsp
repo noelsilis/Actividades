@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -16,86 +16,174 @@
     </head>
     <body>
         <div class="container">
-            <h2>脕rea de Investigaci贸n</h2>
+            <h2>羠ea de Investigaci髇</h2>
+
+            <div id="titulo">
+                <h6><b>Tema Linea Ivestigacion</b></h6>
+            </div>
             <table class="table table-light table-hover">
                 <thead>
                     <tr>
-                        <th>Tema de Investigaci贸n</th>
-                        <th>Grado Acad茅mico</th>
+                        <th>ID</th>
+                        <th>Tema</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach var="listatema" items="${tema}">
+                        <tr>
+                            <td>${listatema.idtema_linea_investigacion}</td>
+                            <td>${listatema.Nombre}</td>
+                            <td>
+                                <div class="btn-group btn-group-sm">
+                                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal1" onclick="datosModal1('${listatema.idtema_linea_investigacion}', '${listatema.Nombre}');">Editar</button>
+                                    <a type="button" class="btn btn-secondary" href="deleteTemaInv.htm?id=${listatema.idtema_linea_investigacion}">Borrar</a>
+                                </div>
+                                <div class="modal" id="myModal1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+
+                                            <!-- Modal Header-->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" style="color:darkslategrey;">Editar</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                                <form class="needs-validation" novalidate method="POST">
+                                                    <div class="form-group">
+                                                        <label for="tema" style="color:black;">Tema de Investigaci髇:</label>
+                                                        <input type="text" class="form-control" id="temaInv" placeholder="Ingresa el tema de investigaci髇" name="temaInv" required>
+                                                        <div class="valid-feedback">Valido.</div>
+                                                        <div class="invalid-feedback">Por favor verifique los campos.</div>
+                                                    </div>
+                                                    <div class="form-group" style="display:none">
+                                                        <input type="text" class="form-control" id="idtemaInv" name="idtemaInv" required>
+                                                    </div>
+                                                    <div class="form-group" style="display:none">
+                                                        <input type="text" class="form-control" id="op" name="op" value="1">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">Aceptar</button>
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+
+            <div id="titulo">
+                <h6><b>Colaboradores</b></h6>
+            </div>
+            <table class="table table-light table-hover">
+                <thead>
+                    <tr>
+                        <th>Tema de Investigaci髇</th>
+                        <th>Grado Acad閙ico</th>
                         <th>Profesor</th>
                         <th>Cargo</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Datos</td>
-                        <td>Datos</td>
-                        <td>Datos</td>
-                        <td>Datos</td>
-                        <td> 
-                            <div class="btn-group btn-group-sm">
-                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">Editar</button>
-                                <button type="button" class="btn btn-secondary">Borrar</button>
-                            </div>
-                            <div class="modal" id="myModal">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
+                    <c:forEach var="listInv" items="${inv}">
+                        <tr>
+                            <td>${listInv.Nombre}</td>
+                            <td>${listInv.GradoAcademico}</td>
+                            <td>${listInv.Docente}</td>
+                            <c:if test="${listInv.CargoDocente == 1}">
+                                <td>Lider</td>
+                            </c:if>
+                            <c:if test="${listInv.CargoDocente == 2}">
+                                <td>Colaborador</td>
+                            </c:if>
+                            <td> 
+                                <div class="btn-group btn-group-sm">
+                                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal" onclick="datosModal2('${listInv.temalinea}', '${listInv.idDocente}', '${listInv.CargoDocente}');">Editar</button>
+                                    <c:if test="${listInv.Estado == 1}">
+                                        <a type="button" class="btn btn-secondary" href="desHabDocentInv.htm?id=${listInv.temalinea}_${listInv.idDocente}_2">Deshabilitar</a>
+                                    </c:if>
+                                    <c:if test="${listInv.Estado == 2}">
+                                        <a type="button" class="btn btn-secondary" href="desHabDocentInv.htm?id=${listInv.temalinea}_${listInv.idDocente}_1">Habilitar</a>
+                                    </c:if>
+                                </div>
+                                <div class="modal" id="myModal">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
 
-                                        <!-- Modal Header-->
-                                        <div class="modal-header">
-                                            <h4 class="modal-title" style="color:darkslategrey;">Editar</h4>
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        </div>
+                                            <!-- Modal Header-->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" style="color:darkslategrey;">Editar</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
 
-                                        <!-- Modal body -->
-                                        <div class="modal-body">
-                                            <form action="/action_page.php" class="needs-validation" novalidate>
-                                                <div class="form-group">
-                                                    <label for="tema" style="color:black;">Tema de Investigaci贸n:</label>
-                                                    <input type="text" class="form-control" id="tema" placeholder="Ingresa el tema de investigaci贸n" name="tema" required>
-                                                    <div class="valid-feedback">Valido.</div>
-                                                    <div class="invalid-feedback">Por favor verifique los campos.</div>
-                                                </div>
-                                                <div class="from-group">
-                                                    <label for="grado" style="color:black;">Grado Acad茅mico:</label>
-                                                    <select id="grado" name="grado" class="custom-select mb-3 form-control" required>
-                                                        <option selected>-Selecciona-</option>
-                                                        <option value="Doctorado">Doctorado</option>
-                                                        <option value="Maestria">Maestr铆a</option>
-                                                        <option value="Ingeniero">Ingenier铆a</option>                                                      
-                                                    </select>
-                                                    <div class="valid-feedback">Valido.</div>
-                                                    <div class="invalid-feedback">Por favor verifique los campos.</div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label for="nombre" style="color:black;">Nombre del Docente:</label>
-                                                    <input type="text" class="form-control" id="nombre" placeholder="Ingresa el nombre del docente" name="nombre" required>
-                                                    <div class="valid-feedback">Valido.</div>
-                                                    <div class="invalid-feedback">Por favor verifique los campos.</div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="cargo" style="color:black;">Cargo:</label>
-                                                    <select id="cargo" name="cargo" class="custom-select mb-3 form-control" required>
-                                                        <option selected>-Selecciona-</option>
-                                                        <option value="Lider">Lider</option>
-                                                        <option value="Colaborador">Colaborador</option>                                                     
-                                                    </select>
-                                                    <div class="valid-feedback">Valido.</div>
-                                                    <div class="invalid-feedback">Por favor verifique los campos.</div>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary">Aceptar</button>
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                            </form>
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                                <form class="needs-validation" novalidate method="POST">
+
+                                                    <div class="from-group">
+                                                        <label for="tema" style="color:black;">Tema de Investigaci髇:</label>
+                                                        <select id="tema" name="tema" class="custom-select mb-3 form-control" required>
+                                                            <option selected>-Selecciona-</option>
+                                                            <c:forEach var="listatema" items="${tema}">
+                                                                <option value="${listatema.idtema_linea_investigacion}">${listatema.Nombre}</option>
+                                                            </c:forEach>                                                    
+                                                        </select>
+                                                        <div class="valid-feedback">Valido.</div>
+                                                        <div class="invalid-feedback">Por favor verifique los campos.</div>
+                                                    </div>
+
+                                                    <div class="from-group">
+                                                        <label for="docente" style="color:black;">Docente:</label>
+                                                        <select id="docente" name="docente" class="custom-select mb-3 form-control" required>
+                                                            <option selected>-Selecciona-</option>
+                                                            <c:forEach var="listDoc" items="${doce}">
+                                                                <option value="${listDoc.iddocente}">${listDoc.Docente}</option>
+                                                            </c:forEach>                                                  
+                                                        </select>
+                                                        <div class="valid-feedback">Valido.</div>
+                                                        <div class="invalid-feedback">Por favor verifique los campos.</div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="cargo" style="color:black;">Cargo:</label>
+                                                        <select id="cargo" name="cargo" class="custom-select mb-3 form-control" required>
+                                                            <option selected>-Selecciona-</option>
+                                                            <option value="1">Lider</option>
+                                                            <option value="2">Colaborador</option>                                                     
+                                                        </select>
+                                                        <div class="valid-feedback">Valido.</div>
+                                                        <div class="invalid-feedback">Por favor verifique los campos.</div>
+                                                    </div>
+
+                                                    <div class="form-group" style="display:none">
+                                                        <input type="text" class="form-control" id="temaOri" name="temaOri">
+                                                    </div>
+
+                                                    <div class="form-group" style="display:none">
+                                                        <input type="text" class="form-control" id="docenteOri" name="docenteOri">
+                                                    </div>
+
+                                                    <div class="form-group" style="display:none">
+                                                        <input type="text" class="form-control" id="op" name="op" value="2">
+                                                    </div>
+
+                                                    <button type="submit" class="btn btn-primary">Aceptar</button>
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
+                    </c:forEach>
                 </tbody>
             </table>
         </div>
-        <script type="text/javascript" src="js/editarMallaCurricular.js?1.0.0"></script>
+        <script type="text/javascript" src="js/editarInvestigacion.js?1.0.0"></script>
     </body>
 </html>

@@ -248,7 +248,7 @@
     </section> 
 </div>
 <h1 id="tam" style="font-size:0px;"><c:out value = "${aux2}"/></h1>  
-<script type="text/javascript" src="js/malla_curricular.js?1.0.0"></script>
+<script type="text/javascript" src="js/mallaCurricular.js?1.0.0"></script>
 <!-- Remember to include jQuery :) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <!--Tabla descripción-->
