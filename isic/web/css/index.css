@@ -5,6 +5,90 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: #fff;
 }
+/*Inicio menú superior*/
+.topmargin-xs{margin-top: 50px !important;}
+.topmargin-sm{margin-top: 100px !important;}
+.topmargin-lg{margin-top: 150px !important; }
+
+.btn{
+    font-size: 14px;
+    padding:15px 26px;
+    min-width: 160px;
+    border-radius: 50px;
+    display:inline-block;
+}
+
+.btn i{
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+/**.btn-outline-light{
+    background-color: #fff;
+    color: black;
+    border: 2px solid #fff;
+}*/
+
+.navbar{
+    /*background-color: #fff;*/
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.05);
+    transition: all 1s ease;
+    min-width: 100px;
+}
+.nav-link{
+    color: #F2F2F2;
+    font-size: 1.1em;
+}
+
+.nav-link:hover{color: #04B4AE}
+
+.logo-itsoeh{
+    min-width: 160px;
+    max-width: 180px;
+}
+
+.navbar-toggler{font-size: 40px; color: #fff;}
+.navbar-toggler:focus{outline: none}
+
+#hero{
+    padding-top: 90px;
+    min-height: 700px;
+    background-image:url(../img/overlay.png), url(../img/itsoeh.jpeg);
+    background-size: cover;
+    color: #fff;
+}
+
+.content-center{
+    margin-top:15%;
+    transform: translateY(-15%);
+    text-align: center;
+}
+
+.content-center p{
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+.content-center h1{
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+/*Fin menú superior*/
+
+/*Inicio Secciones del index*/
+section{
+    padding: 50px 0;
+}
+.content-center h2{
+    font-size: 2.2em;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+/*Fin Secciones del index*/
 
 /*Inicio Sub-Menu*/
 .dropdown-local{
@@ -15,7 +99,7 @@ body{
 .dropdown-content { 
     display: none;
     position: absolute;
-    min-width: 300px;
+    min-width: 180px;
     background:url(../img/overlay.png);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -29,69 +113,61 @@ body{
     text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #1A5276}
+.dropdown-content a:hover {color: #04B4AE;}
 
 .dropdown-local:hover .dropdown-content {
     display: block;
 }
 /*Fin Sub-Menu*/
 
-/*Inicio Banner*/
-.banner{
-    height: 100vh;
-    width: 100%;
-    background:url(../img/overlay.png),url(../img/itsoeh.jpeg);
-    background-position: top;
-    background-size:cover;
-    /*background-attachment: fixed;*/
-    background-repeat: no-repeat;
+/*Inicio Media Query*/
+@media (max-width: 575.98px) { 
+    h1{
+        font-size: 40px;
+        line-height: normal;
+    }
+    .footer-menu{
+        display: block !important;
+        padding: 20px 0 !important;
+        font-size: 20px;
+    }
 }
-.banner .navbar{
-    margin-top:4%;
-}
-.banner .navbar-brand{
-    color: #fff;
-    font-size:1.8em;
-    font-weight: 700;
-    margin-left: 10%;
-}
-.banner .nav{
-    margin-right:10%; 
-}
-.banner .nav li .nav-link{
-    color:white;
-    font-size: 1.2em;
-}
-.banner .info{
-    margin-top:15%;
-    transform: translateY(-15%);
-}
-.banner .info h1{
-    font-size: 2.5em;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 2px;
-}
-.banner .info p{
-    font-size: 2em;
-    font-weight: 500;
-    color: #aaa;
-    letter-spacing: 2px;
-}
-.banner .info .inicio{
-    display: inline-block;
-    border-radius: 50px;
-    margin-left:50%;
-    text-decoration: none;
-    transform: translateX(-50%);
-    color: #fff;
-    background: #58D68D;
-    padding:10px 20px; 
-    font-size: 2em;
-    font-weight: 600;
-}
-.banner .info .inicio:hover{
-    background: #2ECC71;
+/*
+@media (min-width: 576px) and (max-width: 767.98px) { ... }
+
+@media (min-width: 768px) and (max-width: 991.98px) { ... }
+
+@media (min-width: 992px) and (max-width: 1199.98px) { ... }
+
+@media (min-width: 1200px) { ... }
+*/
+/*Fin Media Query*/
+
+/*Inicio Footer*/
+.bg-dark{
+    background-color: #2E2E2E !important; 
 }
 
-/*Fin Banner*/
+#footer{
+    padding: 80px 0; 
+    text-align: center;
+    color: #fff;
+}
+#footer a{
+    color: #fff;
+    text-decoration: none;
+}
+#footer a:hover{
+    color: #04B4AE;;
+}
+#footer .list-inline .list-inline-item{
+    padding: 10px 15px;
+}
+
+#footer small{
+    color: #848484;
+}
+
+/*Fin Footer*/
+
+html{scroll-behavior: smooth;}
