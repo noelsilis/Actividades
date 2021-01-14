@@ -26,7 +26,7 @@
                     <p><h1>TECNOLÓGICO NACIONAL DE MÉXICO</h1></p>
                     <p><h5>INSTITUTO TECNOLÓGICO SUPERIOR DEL OCCIDENTE DEL ESTADO DE HIDALGO</h5></h5></p>
                     <p><h6>INGENIERÍA EN SISTEMAS COMPUTACIONALES</h6></p>
-                    <a href="#portfolio" class="btn btn-outline-light topmargin-xs"><i class="fas fa-info-circle"></i>Más información</a>
+                    <a href="#portfolio" class="btn btn-outline-light topmargin-xs btn-inicio"><i class="fas fa-info-circle"></i>Más información</a>
                 </div>
             </div>
         </section>

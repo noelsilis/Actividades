@@ -49,15 +49,8 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <div class="dropdown-local">
-                                <a class="nav-link" href="#">Administrador</a>
-                                <div class="dropdown-content">
-                                    <a href="adminMallaCurricular.htm" target="iframe_a" >Malla Curricular</a>
-                                    <a href="adminInvestigacion.htm" target="iframe_a" >Investigación</a>
-                                    <a href="adminEspecialidad.htm" target="iframe_a">Especialidad</a>
-                                </div>
-                            </div>
+                        <li>
+                            <a href="Login.htm" class="btn btn-outline-dark" target="_blank">Sing in</a>
                         </li>
                     </ul>
                 </div>

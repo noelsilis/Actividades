@@ -27,6 +27,8 @@
                 <prop key="adminEspecialidad.htm">controlador</prop>
                 <prop key="inicio.htm">controlador</prop>
                 <prop key="footer.htm">controlador</prop>
+                <prop key="administrador.htm">controlador</prop>
+                <prop key="Login.htm">controlador</prop>
             </props>
         </property>
     </bean>

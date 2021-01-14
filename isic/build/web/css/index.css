@@ -10,7 +10,7 @@ body{
 .topmargin-sm{margin-top: 100px !important;}
 .topmargin-lg{margin-top: 150px !important; }
 
-.btn{
+#hero .btn-inicio{
     font-size: 14px;
     padding:15px 26px;
     min-width: 160px;
@@ -18,7 +18,15 @@ body{
     display:inline-block;
 }
 
-.btn i{
+.navbar li .btn{
+    border-radius: 50px;
+    font-size: 14px;
+    padding:7px 13px;
+    min-width: 80px;
+    margin-left: 20px;
+}
+
+#hero .btn-inicio i{
     font-size: 14px;
     margin-right: 5px;
 }

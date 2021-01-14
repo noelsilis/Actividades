@@ -36,6 +36,18 @@ public class Controlador {
         mav.addObject("listEsp", datos);
         return mav;
     }
+    @RequestMapping("administrador.htm")
+    public ModelAndView administrador() {
+        sql = "call isic.sp_especialidad_lista()";
+        List datos = this.jdbcTemplate.queryForList(sql);
+        mav.addObject("listEsp", datos);
+        return mav;
+    }
+    @RequestMapping("Login.htm")
+    public ModelAndView login() {
+        mav.setViewName("Login");
+        return mav;
+    }
     @RequestMapping("inicio.htm")
     public ModelAndView inicio2() {
         mav.setViewName("inicio");

@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="css/index.css?1.0.0" />
         <link rel="stylesheet" type="text/css" href="css/normalize.css?1.0.0" />
         <link rel="stylesheet" type="text/css" href="css/frames.css?1.0.0" />
-        <title>Index</title>
+        <title>Administrador</title>
     </head>
 
     <body>
@@ -37,20 +37,16 @@
                             <a class="nav-link" aria-current="page" href="inicio.htm" target="iframe_a">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Investigacion.htm" target="iframe_a">Investigación</a>
+                            <a href="adminInvestigacion.htm" target="iframe_a" >Investigación</a>
                         </li>
                         <li class="nav-item">
-                            <div class="dropdown-local">
-                                <a class="nav-link">Especialidades</a>
-                                <div class="dropdown-content">
-                                    <c:forEach var="list" items="${listEsp}">
-                                        <a href="Especialidad.htm?sp=${list.idespecialidad}" target="iframe_a">${list.Nombre}</a>
-                                    </c:forEach>
-                                </div>
-                            </div>
+                            <a href="adminMallaCurricular.htm" target="iframe_a" >Malla Curricular</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="adminEspecialidad.htm" target="iframe_a">Especialidad</a>
                         </li>
                         <li>
-                            <a href="Login.htm" class="btn btn-outline-dark" target="_blank">Sing in</a>
+                            <a href="#" class="btn btn-outline-dark">Sing out</a>
                         </li>
                     </ul>
                 </div>

@@ -1,0 +1,116 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f1f1;
+}
+.main-section{
+    margin:0 auto;
+    margin-top:25%;
+    padding: 0;
+}
+
+.modal-content{
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.05);
+    opacity: .95;
+    padding: 0 45px;
+}
+.modal-content h1{
+    color: #ccc;
+    font-size: 2.0em;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.user-img{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.user-img img{
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.form-group input{
+    background: #084866;
+    height: 45px;
+    font-size: 18px;
+    border:0;
+    padding-left: 54px;
+    border-radius: 25px;
+}
+.form-group input:enabled{
+    background: #084866;
+    color:#ccc;
+}
+
+.form-group::before{
+    color:grey;
+    position: absolute;
+    left: 28px;
+    font-size: 25px;
+    padding-top:5px;
+}
+
+.forgot{
+    padding: 10px 0;
+}
+
+.forgot a{
+    color: white;
+}
+form .btn{
+    border-radius: 50px;
+    font-size: 14px;
+    padding:7px 13px;
+    min-width: 80px;
+    margin-bottom: 20px;
+}
+/*inicio css redes sociales*/
+.modal-content .col-12 .sidebar_fb{
+    color: #BDBDBD;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: 0.5s;
+    transition-property: color;
+}
+
+.modal-content .col-12 .sidebar_fb:hover{
+    color: #0D79BB;
+}
+.modal-content .col-12 .sidebar_tw{
+    color: #BDBDBD;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: 0.5s;
+    transition-property: color;
+}
+
+.modal-content .col-12 .sidebar_tw:hover{
+    color: #19B3D3;
+}
+.modal-content .col-12 .itsoeh-site{
+    color: #BDBDBD;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: 0.5s;
+    transition-property: color;
+}
+
+.modal-content .col-12 .itsoeh-site:hover{
+    color: #0DBB64;
+}
+/*fin css redes sociales*/
+.main-section .logo .logo-itsoeh{
+    width: 140px;
+    height: 95px;
+    cursor: pointer;
+    margin-top: -100px;
+    margin-bottom: 30px;
+}
+
