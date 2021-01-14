@@ -1,0 +1,23 @@
+.footer-frame{
+    border:none;
+    height: 350px;
+    width: 100%;
+}
+.inicial-frame{
+    border:none;
+    height: 645px;
+    width: 100%;
+}
+
+@media (max-width: 575.98px) { 
+    .footer-frame{
+        border:none;
+        height: 620px;
+        width: 100%;
+    }
+    .inicial-frame{
+        border:none;
+        height: 100%;
+        width: 100%;
+    }
+}

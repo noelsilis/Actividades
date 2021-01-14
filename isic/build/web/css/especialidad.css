@@ -7,39 +7,67 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.contenedor-texto table{
+.contenedor-texto .tabla-aisgnatura{
     color: whitesmoke;
-    font-size: 70%;
+    font-size: 14px;;
 }
 
 #sec1 .contenedor-texto{
-    font-size: 100%;
+    font-size: 15px;;
 }
 
 #sec2 .contenedor-texto{
-    font-size: 90%;
+    font-size: 15px;
 }
 #sec4{
-    height: 1100px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    padding-top: 100px;
+    height: 100%;
+}
+/*Inicio Malla curricular*/
+#sec4 .tabla{
+    color:white; 
+    font-size: 10px;;
+}
+#sec4 .detalles .fas{
+    font-size: 80%;
+}
+#sec4 .detalles i{
+    padding-left: 80%;
+}
+#sec4 .detalles #tabla1, #tabla2, #tabla3{
+    font-size: 100%;
+}
+#sec4 .detalles #lista1{
+    font-size: 100%;
+}
+
+#sec4 .detalles{
+    padding-top: 10px;
+    font-size: 11px;;
     color: whitesmoke;
 }
+/*Fin Malla Curricular*/
+
 section{
     height: 650px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     color: whitesmoke;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 8%;
+    padding-right: 8%;
 }
 
 section h2{
-    font-size: 50px;
-    font-weight: 500;
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: 2px;
     margin-bottom: 10px;
+}
+section h6{
+    font-size: 1.0em;
+    letter-spacing: 2px;
+    color: #fff;
 }
 
 section p{
@@ -78,21 +106,29 @@ html{
     section{
         flex-direction: column-reverse;
         justify-content: center;
+        height: 1000px;
     }
     section > img{
-        heigh: 30%;
+        heigh: 25%;
     }
     .contenedor-texto{
         text-align: center;
     }
+    #sec4 .tabla{
+        font-size: 35%;
+    }
+    #sec4 .detalles{
+        font-size: 50%;
+    }
 
 }
-@media screen and (max-width: 500px){
+@media screen and (max-width: 575.98px){
     section > img{
-        heigh: 25%;
+        heigh: 100px;;
     }
 }
 img{
-    width: 40%;
+    width: 40;
     height: 40%;
 }
+

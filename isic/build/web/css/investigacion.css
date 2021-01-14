@@ -3,12 +3,9 @@ body{
     background-color: #f1f1f1;
 }
 
-.container{
-    padding-top: 3%;
-}
 
 .container #titulo{
-    background-color: white;
+    background-color: #fff;
     border-radius: 5px;
     text-align: center;
 }
@@ -18,9 +15,13 @@ body{
     padding-bottom: 1%;
     padding-left: 5px;
     padding-right: 5px;
-    color: #3498DB;
+    color: #05AE9F;
 }
 
 #lider{
-    color: #17A589;
+    color: #05AE9F;
 }
+
+.topmargin-xs{margin-top: 50px !important;}
+.topmargin-sm{margin-top: 100px !important;}
+.topmargin-lg{margin-top: 150px !important; }

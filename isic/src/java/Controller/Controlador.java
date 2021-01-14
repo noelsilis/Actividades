@@ -36,6 +36,16 @@ public class Controlador {
         mav.addObject("listEsp", datos);
         return mav;
     }
+    @RequestMapping("inicio.htm")
+    public ModelAndView inicio2() {
+        mav.setViewName("inicio");
+        return mav;
+    }
+    @RequestMapping("footer.htm")
+    public ModelAndView footer() {
+        mav.setViewName("footer");
+        return mav;
+    }
 
     @RequestMapping("adminMallaCurricular.htm")
     public ModelAndView adminMalla() {

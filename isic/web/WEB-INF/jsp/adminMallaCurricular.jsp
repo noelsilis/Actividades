@@ -11,10 +11,12 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <!--CSS local-->
         <link rel="stylesheet" type="text/css" href="css/adminEditor.css?1.0.0" />
+        <link rel="stylesheet" type="text/css" href="css/frames.css?1.0.0" />
+        <link rel="stylesheet" type="text/css" href="css/normalize.css?1.0.0" />
         <title>Admin</title>
     </head>
     <body>
-        <div class="container">
+        <div class="container topmargin-sm">
             <h2>Malla Curricular</h2>
             <table class="table table-light table-hover">
                 <thead>
@@ -52,19 +54,37 @@
                                     <a type="button" class="btn btn-secondary" href="delete.htm?id=${lista.MC_ClaveAsignatura}">Borrar</a>
                                     <!-- The Modal -->
                                 </div>
-                                <div class="modal" id="myModal">
+                                <div class="modal topmargin-sm" id="myModal">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
 
                                             <!-- Modal Header-->
                                             <div class="modal-header">
-                                                <h4 class="modal-title" style="color:darkslategrey;">Editar</h4>
+                                                <h5 class="modal-title" style="color:darkslategrey;">Editar</h5>
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             </div>
-
                                             <!-- Modal body -->
                                             <div class="modal-body">
                                                 <form class="needs-validation" novalidate method="POST">
+                                                    <!--<div class="form-group">
+                                                        <label for="clave" style="color:black;">Clave:</label>
+                                                        <input type="text" class="form-control" id="clave" placeholder="Ingresa la clave de asignatura" name="clave" required>
+                                                        <div class="valid-feedback">Valido.</div>
+                                                        <div class="invalid-feedback">Por favor verifique los campos.</div>
+                                                    </div>-->
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">Clave</span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="clave" placeholder="Ingresa la clave de asignatura" name="clave" required>
+                                                        <!--<label for="horas" style="color:black;">Horas:</label>-->
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">Horas</span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="horas" placeholder="Ingresa las horas de la asignatura" name="horas" required>
+                                                        <div class="valid-feedback">Valido.</div>
+                                                        <div class="invalid-feedback">Por favor verifique los campos.</div>
+                                                    </div>
                                                     <div class="form-group">
                                                         <label for="semestre" style="color:black;">Semestre:</label>
                                                         <select id="semestre" name="semestre" class="custom-select mb-3 form-control" required>
@@ -111,20 +131,8 @@
                                                         <div class="invalid-feedback">Por favor verifique los campos.</div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="clave" style="color:black;">Clave:</label>
-                                                        <input type="text" class="form-control" id="clave" placeholder="Ingresa la clave de asignatura" name="clave" required>
-                                                        <div class="valid-feedback">Valido.</div>
-                                                        <div class="invalid-feedback">Por favor verifique los campos.</div>
-                                                    </div>
-                                                    <div class="form-group">
                                                         <label for="nombre" style="color:black;">Nombre de la asignatura:</label>
                                                         <input type="text" class="form-control" id="nombre" placeholder="Ingresa el nombre de asignatura" name="nombre" required>
-                                                        <div class="valid-feedback">Valido.</div>
-                                                        <div class="invalid-feedback">Por favor verifique los campos.</div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="horas" style="color:black;">Horas:</label>
-                                                        <input type="text" class="form-control" id="horas" placeholder="Ingresa las horas de la asignatura" name="horas" required>
                                                         <div class="valid-feedback">Valido.</div>
                                                         <div class="invalid-feedback">Por favor verifique los campos.</div>
                                                     </div>
@@ -136,11 +144,11 @@
                                                     <div class="form-group" style="display:none">
                                                         <input type="text" class="form-control" id="op"  name="op" value="${-1}">
                                                     </div>
-                                                    
+
                                                     <div class="form-group" style="display:none">
                                                         <input type="text" class="form-control" id="idespecialidadOri"  name="idespecialidadOri" value="${-1}">
                                                     </div> 
-                                                   <button type="submit" class="btn btn-primary">Aceptar</button>
+                                                    <button type="submit" class="btn btn-primary">Aceptar</button>
                                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                                                 </form>
                                             </div>
@@ -154,5 +162,6 @@
             </table>
         </div>
         <script type="text/javascript" src="js/editarMallaCurricular.js?1.0.0"></script>
+        <iframe class="footer-frame" src="footer.htm" title="Iframe Example"></iframe>
     </body>
 </html>

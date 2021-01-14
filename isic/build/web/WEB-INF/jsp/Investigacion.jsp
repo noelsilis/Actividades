@@ -12,49 +12,55 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <!--CSS local-->
         <link rel="stylesheet" type="text/css" href="css/investigacion.css?1.0.0" />
+        <link rel="stylesheet" type="text/css" href="css/frames.css?1.0.0" />
+        <link rel="stylesheet" type="text/css" href="css/normalize.css?1.0.0" />
         <title>Area de Investigacion</title>
     </head>
     <body>
-            <div class="container">
-                <c:set var="aux" value=""/>
-                <c:forEach var="lista" items="${inv}">
-                    <c:if test="${aux != lista.Nombre}">
-                        </table>
-                        <c:set var="aux" value="${lista.Nombre}"/>
-                        <div id="titulo">
-                            <h6><b>${lista.Nombre}</b></h6>
-                        </div>
-                        <table class="table table-light">
-                            <thead>
-                                <tr>
-                                    <th>Grado Académico</th>
-                                    <th>Profesor</th>
-                                    <th>Cargo</th>
-                                </tr>
-                            </thead>
-                        </c:if>
-                        <c:if test="${aux == lista.Nombre}">
-                            <tr>
-                                <td>
-                                    ${lista.GradoAcademico}
-                                </td> 
-                                <td>
-                                    ${lista.Docente}
-                                </td>
-                                <c:if test="${lista.CargoDocente == 1}">
-                                    <td id="lider">
-                                        Lider
-                                    </td> 
-                                </c:if>
-                                <c:if test="${lista.CargoDocente == 2}">
-                                    <td>
-                                        Colaborador
-                                    </td> 
-                                </c:if>
-                            </tr>
+        <div class="container topmargin-sm">
+            <c:set var="aux" value=""/>
+            <c:forEach var="lista" items="${inv}">
+                <c:if test="${aux != lista.Nombre}">
+                </table>
+                <c:set var="aux" value="${lista.Nombre}"/>
+                <div id="titulo">
+                    <h6><b>${lista.Nombre}</b></h6>
+                </div>
+                <table class="table table-light">
+                    <thead>
+                        <tr>
+                            <th>Grado Académico</th>
+                            <th>Profesor</th>
+                            <th>Cargo</th>
+                        </tr>
+                    </thead>
+                </c:if>
 
+                <c:if test="${aux == lista.Nombre}">
+                    <tr>
+                        <td>
+                            ${lista.GradoAcademico}
+                        </td> 
+                        <td>
+                            ${lista.Docente}
+                        </td>
+                        <c:if test="${lista.CargoDocente == 1}">
+                            <td id="lider">
+                                Lider
+                            </td> 
                         </c:if>
-                    </c:forEach>  
-            </div>
-    </body>
+                        <c:if test="${lista.CargoDocente == 2}">
+                            <td>
+                                Colaborador
+                            </td> 
+                        </c:if>
+                    </tr>
+
+                </c:if>
+            </c:forEach>
+        </table>
+    </div>
+    <iframe class="footer-frame" src="footer.htm" title="Iframe Example"></iframe>
+
+</body>
 </html>

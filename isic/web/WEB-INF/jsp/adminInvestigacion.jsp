@@ -12,10 +12,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!--css local-->
         <link rel="stylesheet" type="text/css" href="css/adminEditor.css?1.0.0" />
+        <link rel="stylesheet" type="text/css" href="css/frames.css?1.0.0" />
+        <link rel="stylesheet" type="text/css" href="css/normalize.css?1.0.0" />
         <title>Admininv</title>
     </head>
     <body>
-        <div class="container">
+        <div class="container topmargin-sm">
             <h2>Área de Investigación</h2>
 
             <div id="titulo">
@@ -38,13 +40,13 @@
                                     <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal1" onclick="datosModal1('${listatema.idtema_linea_investigacion}', '${listatema.Nombre}');">Editar</button>
                                     <a type="button" class="btn btn-secondary" href="deleteTemaInv.htm?id=${listatema.idtema_linea_investigacion}">Borrar</a>
                                 </div>
-                                <div class="modal" id="myModal1">
+                                <div class="modal topmargin-sm" id="myModal1">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
 
                                             <!-- Modal Header-->
                                             <div class="modal-header">
-                                                <h4 class="modal-title" style="color:darkslategrey;">Editar</h4>
+                                                <h5 class="modal-title" style="color:darkslategrey;">Editar</h5>
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             </div>
 
@@ -110,13 +112,13 @@
                                         <a type="button" class="btn btn-secondary" href="desHabDocentInv.htm?id=${listInv.temalinea}_${listInv.idDocente}_1">Habilitar</a>
                                     </c:if>
                                 </div>
-                                <div class="modal" id="myModal">
+                                <div class="modal topmargin-sm" id="myModal">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
 
                                             <!-- Modal Header-->
                                             <div class="modal-header">
-                                                <h4 class="modal-title" style="color:darkslategrey;">Editar</h4>
+                                                <h5 class="modal-title" style="color:darkslategrey;">Editar</h5>
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             </div>
 
@@ -185,5 +187,6 @@
             </table>
         </div>
         <script type="text/javascript" src="js/editarInvestigacion.js?1.0.0"></script>
+        <iframe class="footer-frame" src="footer.htm" title="Iframe Example"></iframe>
     </body>
 </html>
