@@ -5,18 +5,15 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: #fff;
 }
-/*Inicio menú superior*/
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
 .topmargin-xs{margin-top: 50px !important;}
 .topmargin-sm{margin-top: 100px !important;}
 .topmargin-lg{margin-top: 150px !important; }
 
-#hero .btn-inicio{
-    font-size: 14px;
-    padding:15px 26px;
-    min-width: 160px;
-    border-radius: 50px;
-    display:inline-block;
-}
+/*Inicio menú superior*/
 
 .navbar li .btn{
     border-radius: 50px;
@@ -56,8 +53,20 @@ body{
     max-width: 180px;
 }
 
-.navbar-toggler{font-size: 40px; color: #fff;}
-.navbar-toggler:focus{outline: none}
+.navbar-toggler i{font-size: 40px; color: #808B96 ;}
+.navbar-toggler:focus{outline: none;}
+
+.navbar button{
+     border: none;
+}
+
+#hero .btn-inicio{
+    font-size: 14px;
+    padding:15px 26px;
+    min-width: 160px;
+    border-radius: 50px;
+    display:inline-block;
+}
 
 #hero{
     padding-top: 90px;
@@ -130,15 +139,10 @@ section{
 /*Fin Sub-Menu*/
 
 /*Inicio Media Query*/
-@media (max-width: 575.98px) { 
+@media (min-width: 576px){ 
     h1{
         font-size: 40px;
         line-height: normal;
-    }
-    .footer-menu{
-        display: block !important;
-        padding: 20px 0 !important;
-        font-size: 20px;
     }
 }
 /*
@@ -151,5 +155,7 @@ section{
 @media (min-width: 1200px) { ... }
 */
 /*Fin Media Query*/
+
+
 
 html{scroll-behavior: smooth;}

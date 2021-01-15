@@ -28,6 +28,12 @@
                 <prop key="inicio.htm">controlador</prop>
                 <prop key="footer.htm">controlador</prop>
                 <prop key="administrador.htm">controlador</prop>
+                <prop key="delete.htm">controlador</prop>
+                <prop key="deleteTemaInv.htm">controlador</prop>
+                <prop key="desHabDocentInv.htm">controlador</prop>
+                <prop key="deleteEspecialidad.htm">controlador</prop>
+                <prop key="deletePEgreso.htm">controlador</prop>
+                <prop key="deleteAsigEsp.htm">controlador</prop>
                 <prop key="Login.htm">controlador</prop>
             </props>
         </property>

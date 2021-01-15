@@ -105,7 +105,6 @@ html{
 @media screen and (max-width: 1000px){
     section{
         flex-direction: column-reverse;
-        justify-content: center;
         height: 1000px;
     }
     section > img{
@@ -122,13 +121,13 @@ html{
     }
 
 }
-@media screen and (max-width: 575.98px){
+@media screen and (max-width: 375px){
     section > img{
-        heigh: 100px;;
+        heigh: 12%;
     }
 }
 img{
-    width: 40;
     height: 40%;
 }
+
 

@@ -2,16 +2,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
-
-<html>
+<html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!--Bootstrap-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
-              rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
-              crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <!--CSS Local-->
         <link rel="stylesheet" type="text/css" href="css/especialidad.css?1.0.0" />
         <link rel="stylesheet" type="text/css" href="css/frames.css?1.0.0" />
@@ -62,7 +59,6 @@
                 </table>
             </div>
             <a href="#sec4">Section 4</a>
-            <!--<a id="malla" target="_blank" href="mallaCurricular.htm?sp=${list.idespecialidad}">Malla Curricular</a>-->
         </div>
     </section>
     <section id="sec4">
@@ -249,11 +245,9 @@
             </table>
         </div>
     </section> 
-</div>
-<h1 id="tam" style="font-size:0px;"><c:out value = "${aux2}"/></h1>  
-<script type="text/javascript" src="js/mallaCurricular.js?1.0.0"></script>
-<!-- Remember to include jQuery :) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-<iframe class="footer-frame" src="footer.htm" title="Iframe Example"></iframe>
+    <h1 id="tam" style="font-size:0px;"><c:out value = "${aux2}"/></h1>  
+    <script type="text/javascript" src="js/mallaCurricular.js?1.0.0"></script>
+    <iframe class="footer-frame" src="footer.htm" title="Iframe Example"></iframe>
+
 </body>
 </html>

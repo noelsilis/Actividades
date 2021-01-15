@@ -9,6 +9,7 @@ import Config.Conexion;
 import Modelo.Asignatura;
 import Modelo.Especialidad;
 import Modelo.Investigacion;
+import Modelo.Admin;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -36,6 +37,7 @@ public class Controlador {
         mav.addObject("listEsp", datos);
         return mav;
     }
+
     @RequestMapping("administrador.htm")
     public ModelAndView administrador() {
         sql = "call isic.sp_especialidad_lista()";
@@ -43,16 +45,31 @@ public class Controlador {
         mav.addObject("listEsp", datos);
         return mav;
     }
+
     @RequestMapping("Login.htm")
     public ModelAndView login() {
         mav.setViewName("Login");
         return mav;
     }
+
+    @RequestMapping(value = "Login.htm", method = RequestMethod.POST)
+    public ModelAndView login(Admin admin) {
+        if ("isic".equals(admin.getAdmin()) && "itsoeh.isic2021".equals(admin.getPass())) {
+            System.out.println(admin.getAdmin());
+            System.out.println(admin.getPass());
+            mav.setViewName("administrador");
+            return mav;
+        }
+        mav.setViewName("Login");
+        return mav;
+    }
+
     @RequestMapping("inicio.htm")
     public ModelAndView inicio2() {
         mav.setViewName("inicio");
         return mav;
     }
+
     @RequestMapping("footer.htm")
     public ModelAndView footer() {
         mav.setViewName("footer");
@@ -128,7 +145,7 @@ public class Controlador {
         mav.setViewName("adminInvestigacion");
         return mav;
     }
-    
+
     @RequestMapping(value = "adminInvestigacion.htm", method = RequestMethod.POST)
     public ModelAndView areaAdminInvestigacion(Investigacion inv) {
         switch (inv.getOp()) {
@@ -145,7 +162,7 @@ public class Controlador {
         }
         return new ModelAndView("redirect:/adminInvestigacion.htm");
     }
-    
+
     @RequestMapping("deleteTemaInv.htm")
     public ModelAndView DeleteTemaInv(HttpServletRequest request) {
         String id = request.getParameter("id");
@@ -153,10 +170,10 @@ public class Controlador {
         this.jdbcTemplate.update(sql, id);
         return new ModelAndView("redirect:/adminInvestigacion.htm");
     }
-    
+
     @RequestMapping("desHabDocentInv.htm")
     public ModelAndView DesHabDocentInv(HttpServletRequest request) {
-        String [] tmp = request.getParameter("id").split("_");
+        String[] tmp = request.getParameter("id").split("_");
         sql = "call isic.sp_DesHabLineaInvDoc(?,?,?)";
         this.jdbcTemplate.update(sql, tmp[0], tmp[1], tmp[2]);
         return new ModelAndView("redirect:/adminInvestigacion.htm");
@@ -233,7 +250,7 @@ public class Controlador {
         this.jdbcTemplate.update(sql, tmp[0], tmp[1]);
         return new ModelAndView("redirect:/adminEspecialidad.htm");
     }
-    
+
     @RequestMapping("deleteAsigEsp.htm")
     public ModelAndView DeleteAsigEsp(HttpServletRequest request) {
         String[] tmp = request.getParameter("id").split("_");
