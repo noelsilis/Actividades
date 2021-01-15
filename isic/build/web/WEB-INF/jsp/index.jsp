@@ -50,7 +50,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="Login.htm" class="btn btn-outline-dark" target="_blank">Sing in</a>
+                            <a href="Login.htm" class="btn btn-outline-dark">Sing in</a>
                         </li>
                     </ul>
                 </div>

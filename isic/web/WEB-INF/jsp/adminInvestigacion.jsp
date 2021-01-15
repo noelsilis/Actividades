@@ -187,6 +187,23 @@
             </table>
         </div>
         <script type="text/javascript" src="js/editarInvestigacion.js?1.0.0"></script>
-        <iframe class="footer-frame" src="footer.htm" title="Iframe Example"></iframe>
-    </body>
+    <section id="footer" class="bg-dark">
+        <div class="container">
+            <img src="img/isic-itsoeh-logo-blanco.png?1.0.0" alt="logo" class="logo-itsoeh">
+
+            <ul class="list-inline">
+                <li class="list-inline-item footer-menu"><a href="#"><i class="fas fa-envelope"></i> rporras@itsoeh.edu.mx</a></li>
+                <li class="list-inline-item footer-menu"><a href="#"><i class="fas fa-phone-square-alt"></i> 01 738-73-54000 ext 240</a></li>
+                <li class="list-inline-item footer-menu">
+                    <a target="_blank" href="https://www.facebook.com/ING-Sistemas-Computacionales-ITSOEH-916964301664810/">
+                        <i class="fab fa-facebook-square"></i> Facebook</a>
+                </li>
+            </ul>
+            <ul class="list-inline">
+                <li class="list-inline-item footer-menu"><span>Atención: M.C. Rolando Porras Muñoz</span></li>
+            </ul>
+            <small>© 2021 Ingeniería en Sistemas Computacionales | ITSOEH</small>
+        </div>
+    </section>
+</body>
 </html>

@@ -13,7 +13,7 @@
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <!--CSS local-->
-        <link rel="stylesheet" type="text/css" href="css/index.css?1.0.0" />
+        <link rel="stylesheet" type="text/css" href="css/footer.css?1.0.0" />
         <link rel="stylesheet" type="text/css" href="css/normalize.css?1.0.0" />
         <title>Inicio</title>
     </head>
